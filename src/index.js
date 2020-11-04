@@ -1,1 +1,11 @@
-console.log(1111)
+import RenderForm from './RenderForm/index.js'
+import {
+  FTitle,
+  DTitle,
+} from './Title/index.js'
+
+export {
+  RenderForm,
+  FTitle,
+  DTitle,
+}
