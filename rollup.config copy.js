@@ -20,12 +20,12 @@ import cssnano from "cssnano";
 // eslint-disable-next-line no-undef
 const env = process.env.NODE_ENV;
 export default {
-    input: "examples/index.js",
+    input: "src/index.js",
     output: {
-        file: 'dist/umd/main.js', // 出口路径
+        file: './dist/umd/main.js', // 出口路径
         name: 'Main', // 指定打包后全局变量的名字
         format: 'umd', // 统一模块规范
-        // sourcemap: true, // es6-> es5  开
+        sourcemap: true, // es6-> es5  开
     },
     //告诉rollup不要将此lodash打包，而作为外部依赖
     external: ["react", "lodash", "antd"],
@@ -42,12 +42,14 @@ export default {
             exclude: ["node_modules/**"]
         }),
         resolve(),
-        commonjs(),
+        commonjs({
+            include: ["node_modules/**"]
+        }),
         json(),
-        // eslint({
-        //     include: ["src/**/*.js"],
-        //     exclude: ["src/styles/**"]
-        // }),
+        eslint({
+            include: ["src/**/*.js"],
+            exclude: ["src/styles/**"]
+        }),
         replace({
             "process.env.NODE_ENV": JSON.stringify(env)
         }),

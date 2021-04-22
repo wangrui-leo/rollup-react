@@ -1,28 +1,19 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('../../../../../RenderForm'), require('../../../../../Title')) :
-  typeof define === 'function' && define.amd ? define(['exports', '../../../../../RenderForm', '../../../../../Title'], factory) :
-  (global = global || self, factory(global.Main = {}, global.RenderForm, global.Title));
-}(this, (function (exports, RenderForm, Title) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
+  typeof define === 'function' && define.amd ? define(['react'], factory) :
+  (global = global || self, global.Main = factory(global.React));
+}(this, (function (React) { 'use strict';
 
-  RenderForm = RenderForm && Object.prototype.hasOwnProperty.call(RenderForm, 'default') ? RenderForm['default'] : RenderForm;
+  React = React && Object.prototype.hasOwnProperty.call(React, 'default') ? React['default'] : React;
 
+  var Comp = function Comp(_ref) {
+    var model = _ref.model,
+        loading = _ref.loading,
+        location = _ref.location,
+        dispatch = _ref.dispatch;
+    return /*#__PURE__*/React.createElement("div", null);
+  };
 
-
-  exports.RenderForm = RenderForm;
-  Object.defineProperty(exports, 'DTitle', {
-    enumerable: true,
-    get: function () {
-      return Title.DTitle;
-    }
-  });
-  Object.defineProperty(exports, 'FTitle', {
-    enumerable: true,
-    get: function () {
-      return Title.FTitle;
-    }
-  });
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return Comp;
 
 })));
-//# sourceMappingURL=main.js.map
